@@ -1,0 +1,108 @@
+TABLAS:
+
+Cliente:
+id_cliente (PK)
+nombre varchar(30) NotNUll
+apellidoP varchar(30) NotNUll
+apellidoM varchar(30) NotNUll
+correo varchar(50) NotNUll
+contraseña varchar(20) NotNUll
+num_celular varchar(20) 
+imagen varchar(50)
+asistencias int
+faltas int
+cancelaciones int
+
+Empleado:
+id_empleado (PK)
+nombre varchar(30) NotNUll
+apellidoP varchar(30) NotNUll
+apellidoM varchar(30) NotNUll
+imagen varchar(50)
+
+Servicio:
+id_servicio (PK) 
+id_subCategoria (FK)
+nombre varchar(30) NotNUll
+descripción varchar(30) NotNUll
+precio float NotNUll
+imagen varchar(50) 
+
+Cita:
+id_cita (PK)
+id_cliente (FK)
+fecha date NotNUll
+hora time NotNUll
+
+Categoria:
+id_categoria (PK)
+nombre NotNUll
+imagen varchar(50)
+
+Subcategoria:
+id_subcategoria (PK)
+id_categoria (FK)
+nombre varchar(30) NotNUll
+imagen varchar(50)
+
+Cita_Servicio:
+id_citaServicio (PK)
+ID_cita (FK)
+id_servicio (FK)
+
+Cita_Empleado:
+id_citaEmpleado (PK)
+id_cita (FK)
+id_empleado (FK)
+
+EmpleadoServicio:
+id_empleadoServicio (PK)
+id_empleado (FK)
+id_servicio (FK)
+
+HorarioSalon:
+id_horario (PK)
+dia_semana varchar(20)
+hora_inicio time 
+hora_fin time 
+
+HistorialAsistencias:
+id_historial (PK)
+id_cita (FK)
+Estado varchar(30)
+
+
+ListaNegra:
+id_listaNegra (PK)
+id_cliente (FK)
+motivo varchar (50)
+
+HorarioEmpleado:
+id_horarioEmpleado (PK)
+id_empleado (FK)
+dia_semana  VARCHAR (30)
+hora_inicio time NotNUll
+hora_fin time NotNUll
+hora_descanso_inicio time NotNUll
+hora_descanso_fin time NotNUll
+
+
+
+CARDINALIDAD:
+
+Cliente - Cita (1:N): Un cliente puede tener múltiples citas, pero cada cita pertenece a un solo cliente.
+Empleado - CitaEmpleado (1:N): Un empleado puede estar asociado con múltiples citas, pero cada cita solo está asociada con un empleado en particular.
+Servicio - CitaServicio (1:N): Un servicio puede estar asociado con múltiples citas, pero cada cita solo está asociada con un servicio en particular.
+Categoria - Subcategoria (1:N): Una categoría puede tener múltiples subcategorías, pero cada subcategoría pertenece a una sola categoría.
+Subcategoria - Servicio (1:N): Una subcategoría puede tener múltiples servicios, pero cada servicio pertenece a una sola subcategoría.
+Cita - CitaEmpleado (1:N): Una cita puede estar asociada con múltiples empleados, pero cada empleado solo está asociado con una cita en particular.
+Cita - CitaServicio (1:N): Una cita puede estar asociada con múltiples servicios, pero cada servicio solo está asociado con una cita en particular.
+Empleado - EmpleadoServicio (1:N): Un empleado puede tener múltiples registros en la tabla EmpleadoServicio, lo que indica los múltiples servicios que ofrece, pero cada registro en EmpleadoServicio pertenece a un solo empleado.
+Servicio - EmpleadoServicio (N:1): Un servicio puede estar asociado a múltiples registros en la tabla EmpleadoServicio, lo que indica los múltiples empleados que ofrecen ese servicio, pero cada registro en EmpleadoServicio está asociado a un solo servicio.
+Cita - HistorialAsistencias (1:N): Una cita puede tener múltiples registros en el historial de asistencias, pero cada registro está asociado a una sola cita.
+Cliente - ListaNegra (1:1): Cada cliente puede estar en la lista negra una vez, pero no más de una vez.
+Empleado - HorarioEmpleado (1:N): Un empleado puede tener múltiples registros en la tabla HorarioEmpleado, lo que indica los múltiples horarios de trabajo que tiene, pero cada registro en HorarioEmpleado pertenece a un solo empleado.
+
+
+
+
