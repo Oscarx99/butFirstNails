@@ -1,0 +1,179 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Encabezado */
+header {
+    background-color: #1b4659;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000; /* Mantiene el encabezado sobre otros elementos */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .logo img {
+    width: 150px; /* Ancho deseado del logotipo */
+    height: 110px; /* Mantener proporciones */
+}
+
+/* Botones */
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px; /* Espacio entre botones */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+#inicio-sesion-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#inicio-sesion-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1b4659;
+}
+
+#inicio-sesion-form .form-group {
+    margin-bottom: 20px;
+}
+
+#inicio-sesion-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#inicio-sesion-form input[type="email"],
+#inicio-sesion-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#inicio-sesion-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#inicio-sesion-form button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Menú lateral */
+.menu-toggle {
+    font-size: 30px;
+    cursor: pointer;
+    color: #101010;
+    position: fixed;
+    top: 50px; /* Ajusta la altura para evitar superposición con el encabezado */
+    left: 25px;
+    z-index: 1001; /* Asegura que el menú esté por encima del encabezado */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: 999;
+    background-color: #344454;
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    border-top-right-radius: 10px; /* Bordes redondeados */
+    border-bottom-right-radius: 10px;
+    border: 2px solid #ab982c;
+}
+
+.sidebar-content {
+    padding: 20px;
+    margin-top: 130px; /* Añade margen superior para compensar la altura del encabezado */
+}
+
+.sidebar h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Mostrar el menú lateral activo */
+.sidebar.active {
+    width: 250px;
+}
+
+/* Página principal */
+.page-content {
+    width: 100%;
+    margin: auto;
+    padding-top: 60px; /* Ajusta para evitar superposición con el encabezado */
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="./app/assets/css/styles.css">
+    <style>
+        /* Estilos específicos para el formulario de registro */
+        #registro-form {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #registro-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1b4659;
+        }
+
+        #registro-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        #registro-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        #registro-form input[type="text"],
+        #registro-form input[type="email"],
+        #registro-form input[type="password"],
+        #registro-form input[type="tel"],
+        #registro-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px; /* Añadir margen inferior */
+        }
+
+        #registro-form button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #registro-form button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Botón para mostrar/ocultar contraseña */
+        #toggle-password {
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #toggle-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="registro-form" action="registro_usuario.php" method="post">
+            <h2>Registro de Usuario</h2>
+            <div class="form-group">
+                <label for="nombre">Nombre(s):</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido(s):</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <div style="display: flex;">
+                    <select id="codigo-pais" name="codigo-pais" style="width: 30%; margin-right: 10px;">
+                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+52">🇲🇽 +52</option>
+                        <option value="+57">🇨🇴 +57</option>
+                        <!-- Agrega más opciones de países según sea necesario -->
+                    </select>
+                    <input type="tel" id="telefono" name="telefono" required style="width: 70%;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+                <a id="toggle-password" onclick="togglePassword()">Mostrar/Ocultar Contraseña</a>
+            </div>
+            <div class="form-group">
+                <label for="repetir-contraseña">Repetir Contraseña:</label>
+                <input type="password" id="repetir-contraseña" name="repetir-contraseña" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Función para mostrar u ocultar la contraseña
+        function togglePassword() {
+            const passwordInput = document.getElementById('contraseña');
+            const passwordRepeatInput = document.getElementById('repetir-contraseña');
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            passwordRepeatInput.type = type;
+        }
+    </script>
+</body>
+</html>
+

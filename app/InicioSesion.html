@@ -1,25 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../CSS/InicioSesion.css">
+    <link rel="stylesheet" href="./app/assets/css/styles.css">
+    <style>
+        /* Estilos específicos para el formulario de inicio de sesión */
+        #inicio-sesion-form {
+            max-width: 400px;
+            margin: 100px auto; /* Ajusta el margen para centrarlo y darle espacio */
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #inicio-sesion-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1b4659; /* Coincide con el estilo del encabezado principal */
+        }
+
+        #inicio-sesion-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        #inicio-sesion-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        #inicio-sesion-form input[type="email"],
+        #inicio-sesion-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px; /* Añadir margen inferior */
+        }
+
+        #inicio-sesion-form button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #333; /* Coincide con el estilo de los botones de la página principal */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #inicio-sesion-form button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Enlace para registrarse */
+        #registro-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px; /* Añadir espacio superior */
+            color: #007bff; /* Coincide con los colores de los enlaces */
+            text-decoration: none;
+        }
+
+        #registro-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
-    <form id="inicio-sesion-form" action="inicio_sesion.php" method="post">
-        <h2>Iniciar Sesión</h2>
-        <div class="form-group">
-            <label for="correo_inicio">Correo Electrónico:</label>
-            <input type="email" id="correo_inicio" name="correo_inicio" required>
-        </div>
-        <div class="form-group">
-            <label for="contraseña_inicio">Contraseña:</label>
-            <input type="password" id="contraseña_inicio" name="contraseña_inicio" required>
-        </div>
-        <div class="form-group">
-            <button type="submit">Iniciar Sesión</button>
-        </div>
-    </form>
+    <div class="container">
+        <form id="inicio-sesion-form" action="inicio_sesion.php" method="post">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label for="correo_inicio">Correo Electrónico:</label>
+                <input type="email" id="correo_inicio" name="correo_inicio" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña_inicio">Contraseña:</label>
+                <input type="password" id="contraseña_inicio" name="contraseña_inicio" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+            <!-- Enlace para registrarse -->
+            <a id="registro-link" href="registro.html">¿Eres cliente nuevo? Regístrate aquí</a>
+        </form>
+    </div>
 </body>
 </html>

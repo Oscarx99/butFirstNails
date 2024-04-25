@@ -1,0 +1,5 @@
+1.- agregar um boton para inicio de sesion  lado de agendar cita
+(tabla de administrador bd cliente) cambio del dom segun privilegios
+html perfil, boton historial.
+2.- media querys 
+3.- analizar el css, sass 
