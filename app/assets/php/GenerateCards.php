@@ -16,9 +16,7 @@ try {
         $imagenCategoria = $row['imagen'];
 
         // Generar la tarjeta de categoría
-        
-
-
+    
         echo '<div class="card">';
         echo '<img src="' . $imagenCategoria . '" alt="' . $nombreCategoria . '">';
         echo '<div class="card-body">';
