@@ -449,7 +449,7 @@ var horariosSemanales = {};
 
 
 // Función para capturar los horarios de trabajo ingresados
-function enviarHorario() {
+function  enviarHorario() {
    
     var diaSemana = document.getElementById("diaSemana").value;
     var horaInicio = document.getElementById("horaInicio").value;
@@ -523,10 +523,11 @@ function enviarHorario() {
 // Evento change para el select de día de la semana
 $('#diaSemana').change(function() {
     // Llamar a la función enviarHorario() para capturar los horarios de trabajo al cambiar la opción
-   
+    enviarHorario();
     
     var diaSeleccionado = this.value;
     var horarios = horariosSemanales[diaSeleccionado];
+    
     if (horarios) {
         // Si existen horarios definidos para el día seleccionado, actualizar los campos de entrada de tiempo
         $('#horaInicio').val(horarios.horaInicio);
@@ -540,7 +541,7 @@ $('#diaSemana').change(function() {
         $('#horaIniciodescanso').val('');
         $('#horaFindescanso').val('');
     }
-    enviarHorario();
+   
 });
 
 
